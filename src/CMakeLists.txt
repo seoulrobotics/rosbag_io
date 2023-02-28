@@ -1,0 +1,5 @@
+add_subdirectory(cpp_common)
+add_subdirectory(rosbag_io)
+add_subdirectory(roscpp_serialization)
+add_subdirectory(rostime)
+add_subdirectory(roslz4)
