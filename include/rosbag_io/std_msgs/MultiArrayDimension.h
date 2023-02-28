@@ -67,7 +67,7 @@ typedef boost::shared_ptr< ::std_msgs::MultiArrayDimension const> MultiArrayDime
 template<typename ContainerAllocator>
 std::ostream& operator<<(std::ostream& s, const ::std_msgs::MultiArrayDimension_<ContainerAllocator> & v)
 {
-ros::message_operations::Printer< ::std_msgs::MultiArrayDimension_<ContainerAllocator> >::stream(s, "", v);
+rosbag_io::ros::message_operations::Printer< ::std_msgs::MultiArrayDimension_<ContainerAllocator> >::stream(s, "", v);
 return s;
 }
 

@@ -63,7 +63,7 @@ typedef boost::shared_ptr< ::std_msgs::UInt8MultiArray const> UInt8MultiArrayCon
 template<typename ContainerAllocator>
 std::ostream& operator<<(std::ostream& s, const ::std_msgs::UInt8MultiArray_<ContainerAllocator> & v)
 {
-ros::message_operations::Printer< ::std_msgs::UInt8MultiArray_<ContainerAllocator> >::stream(s, "", v);
+rosbag_io::ros::message_operations::Printer< ::std_msgs::UInt8MultiArray_<ContainerAllocator> >::stream(s, "", v);
 return s;
 }
 
