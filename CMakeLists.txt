@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0.2)
 cmake_policy(SET CMP0076 NEW)
 
-project(rosbag_io)
+project(rosbag_io VERSION 1.0.0)
 
 set_directory_properties(PROPERTIES COMPILE_OPTIONS "-Wall;-Wextra")
 
@@ -49,5 +49,11 @@ target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${BZIP2_LIBRARIES} ${lz
 add_subdirectory(src)
 
 # Install library
-install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
-install(DIRECTORY include/ DESTINATION include)
+include(GNUInstallDirs)
+install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Seoul Robotics")
+SET(CPACK_DEBIAN_PACKAGE_DEPENDS "libbz2-dev, liblz4-dev, libboost-system-dev, libboost-filesystem-dev, libboost-thread-dev")
+INCLUDE(CPack)
